@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="vehicleDetailPane" prefHeight="1010.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.VehicleDetailFormController">
+   <children>
+      <ImageView fitHeight="1010.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../assets/images/im 5.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="633.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VEHICLE MANAGE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Pane layoutX="100.0" layoutY="175.0" prefHeight="249.0" prefWidth="1400.0" style="-fx-border-color: #218c74; -fx-border-radius: 20; -fx-border-width: 5;">
+         <children>
+            <Text layoutX="23.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Id *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="580.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Id *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="23.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle Number *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="580.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtVehicleId" layoutX="201.0" layoutY="47.0" onKeyReleased="#txtVehicleIdOnKeyReleased" prefHeight="30.0" prefWidth="245.0" promptText="Enter V001 Format here" />
+            <TextField fx:id="txtVehicleNumber" layoutX="201.0" layoutY="155.0" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="245.0" promptText="Enter Vehicle Number here" />
+            <TextField fx:id="txtVehicleModel" layoutX="747.0" layoutY="155.0" prefHeight="30.0" prefWidth="245.0" promptText="Enter vehicle model here" />
+            <Button layoutX="1076.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #228B22; -fx-background-radius: 15;" text="Save" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button fx:id="btnUpdate" layoutX="1255.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" onMouseExited="#btnUpdateOnMouseExited" onMouseMoved="#btnUpdateOnMouseMoved" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #228B22; -fx-background-radius: 15;" text="Update" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1076.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #228B22; -fx-background-radius: 15;" text="Delete" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1255.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #228B22; -fx-background-radius: 15;" text="Clear" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <ComboBox fx:id="cmbEmployeeId" layoutX="747.0" layoutY="48.0" onAction="#cmbEmployeeOnAction" prefHeight="30.0" prefWidth="233.0" promptText="Enter Employee Id here" />
+         </children>
+      </Pane>
+      <TableView fx:id="tblVehicle" layoutX="100.0" layoutY="511.0" prefHeight="431.0" prefWidth="990.0" stylesheets="@../Stylesheet/tableView.css">
+        <columns>
+          <TableColumn fx:id="colVehicleId" prefWidth="229.0" text="Vehicle Id" />
+          <TableColumn fx:id="colEmployeeId" prefWidth="216.0" text="Employee Id" />
+            <TableColumn fx:id="colVehicleNumber" prefWidth="281.0" text="Vehicle Number" />
+            <TableColumn fx:id="colModel" prefWidth="263.0" text="Model" />
+        </columns>
+      </TableView>
+      <Pane layoutX="1152.0" layoutY="545.0" prefHeight="359.0" prefWidth="376.0">
+      <ImageView fitHeight="317.0" fitWidth="338.0" layoutX="24.0" layoutY="18.0">
+         <image>
+            <Image url="@../assets/gif/Delivery truck (1).gif" />
+         </image>
+      </ImageView>
+      </Pane>
+   </children>
+</AnchorPane>

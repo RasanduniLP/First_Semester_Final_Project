@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="materialPane" prefHeight="1010.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RawMaterialFormController">
+   <children>
+      <ImageView fitHeight="1010.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../assets/images/im 3.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="594.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MATERIAL  MANAGE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Pane layoutX="78.0" layoutY="176.0" prefHeight="229.0" prefWidth="1445.0" style="-fx-border-color: #218c74; -fx-border-radius: 20; -fx-border-width: 5;">
+         <children>
+            <Text layoutX="39.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material Id*">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtMaterialId" layoutX="167.0" layoutY="42.0" onAction="#txtSearchOnAction" onKeyReleased="#txtMaterialIdOnKeyReleased" prefHeight="30.0" prefWidth="239.0" promptText="Enter R001 Format here" />
+            <Text layoutX="490.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Material Name *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtMaterialName" layoutX="661.0" layoutY="42.0" prefHeight="30.0" prefWidth="239.0" promptText="Enter Material Name here" />
+            <Text layoutX="1002.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtUnitPrice" layoutX="1142.0" layoutY="42.0" onKeyReleased="#txtUnitPriceOnKeyReleased" prefHeight="30.0" prefWidth="239.0" promptText="Enter Unit Price here" />
+            <Button layoutX="157.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-radius: 15; -fx-background-color: #387C44;" text="Save" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button fx:id="btnUpdate" layoutX="504.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" onMouseExited="#btnUpdateOnMouseExited" onMouseMoved="#btnUpdateOnMouseMoved" prefHeight="30.0" prefWidth="102.0" style="-fx-background-radius: 15; -fx-background-color: #387C44;" text="Update" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="840.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-radius: 15; -fx-background-color: #387C44;" text="Delete" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1160.0" layoutY="140.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-radius: 15; -fx-background-color: #387C44;" text="Clear" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+         </children>
+      </Pane>
+      <TableView fx:id="tblRawMaterial" layoutX="95.0" layoutY="502.0" prefHeight="448.0" prefWidth="882.0" stylesheets="@../Stylesheet/tableView.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="183.0" text="          Material Id" />
+          <TableColumn fx:id="colName" prefWidth="436.0" text="                                    Material Name" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="260.0" text="                 Unit Price" />
+        </columns>
+      </TableView>
+      <Button layoutX="1395.0" layoutY="58.0" mnemonicParsing="false" onAction="#btnDetailsOnAction" prefHeight="42.0" prefWidth="146.0" style="-fx-background-color: #52D017; -fx-background-radius: 10;" text="More Details" />
+      <Pane layoutX="1058.0" layoutY="522.0" prefHeight="409.0" prefWidth="455.0" style="-fx-background-color: #50C878; -fx-background-radius: 20;">
+         <children>
+            <Pane layoutX="40.0" layoutY="14.0" prefHeight="149.0" prefWidth="159.0" style="-fx-background-color: #C3FDB8; -fx-background-radius: 15;">
+               <children>
+                  <ImageView fitHeight="105.0" fitWidth="112.0" layoutX="14.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../assets/images/file (4).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="255.0" layoutY="14.0" prefHeight="149.0" prefWidth="159.0" style="-fx-background-color: #C3FDB8; -fx-background-radius: 15;">
+               <children>
+                  <ImageView fitHeight="112.0" fitWidth="96.0" layoutX="32.0" layoutY="19.0">
+                     <image>
+                        <Image url="@../assets/images/file (5).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="40.0" layoutY="193.0" prefHeight="195.0" prefWidth="180.0" style="-fx-background-color: #C3FDB8; -fx-background-radius: 15;">
+               <children>
+                  <ImageView fitHeight="142.0" fitWidth="146.0" layoutX="17.0" layoutY="27.0">
+                     <image>
+                        <Image url="@../assets/images/bg 1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="255.0" layoutY="210.0" prefHeight="161.0" prefWidth="159.0" style="-fx-background-color: #C3FDB8; -fx-background-radius: 15;">
+               <children>
+                  <ImageView fitHeight="112.0" fitWidth="102.0" layoutX="29.0" layoutY="28.0">
+                     <image>
+                        <Image url="@../assets/images/bg 2.jpeg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

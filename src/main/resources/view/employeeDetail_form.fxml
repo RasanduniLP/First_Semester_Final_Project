@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="employeePane" prefHeight="1010.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.EmployeeFormController">
+   <children>
+      <ImageView fitHeight="1010.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../assets/images/im 3.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="553.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EMPLOYEE MANAGE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Pane layoutX="36.0" layoutY="157.0" prefHeight="263.0" prefWidth="1529.0" style="-fx-border-color: #218c74; -fx-border-radius: 20; -fx-border-width: 5;">
+         <children>
+            <Text layoutX="25.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Id *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtEmployeeId" layoutX="163.0" layoutY="33.0" onAction="#txtSearchOnAction" onKeyReleased="#txtEmployeeIdOnKeyReleased" prefHeight="30.0" prefWidth="206.0" promptText="Enter Employee Id here" />
+            <Text layoutX="425.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Name *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtEmployeeName" layoutX="609.0" layoutY="35.0" onAction="#txtEmpNameOnAction" onKeyReleased="#txtEmpNameOnKeyReleased" prefHeight="30.0" prefWidth="214.0" promptText="Enter Employee Name here" />
+            <Text layoutX="892.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtEmployeeNIC" layoutX="971.0" layoutY="34.0" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="214.0" promptText="Enter NIC here" />
+            <Text layoutX="24.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtEmployeeAddress" layoutX="163.0" layoutY="113.0" prefHeight="30.0" prefWidth="206.0" promptText="Enter Address here" />
+            <Text layoutX="425.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel No *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtTelNo" layoutX="609.0" layoutY="105.0" onAction="#txtContactOnAction" onKeyReleased="#txtContactOnKeyReleased" prefHeight="30.0" prefWidth="221.0" promptText="Enter Tel No here" />
+            <Text layoutX="892.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtEmployeeSalary" layoutX="971.0" layoutY="104.0" onKeyReleased="#txtSalaryOnKeyReleased" prefHeight="30.0" prefWidth="221.0" promptText="Enter Employee salary here" />
+            <Text layoutX="27.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Section *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtEmployeeSection" layoutX="163.0" layoutY="194.0" prefHeight="30.0" prefWidth="206.0" promptText="Enter Employee Section here" />
+            <Button fx:id="btnUpdate" layoutX="1409.0" layoutY="39.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" onMouseExited="#btnUpdateOnMouseExited" onMouseMoved="#btnUpdateOnMouseMoved" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Update" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1243.0" layoutY="156.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Delete" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1409.0" layoutY="156.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Clear" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1243.0" layoutY="42.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Save" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <TableView fx:id="tblEmployee" layoutX="36.0" layoutY="505.0" prefHeight="450.0" prefWidth="1208.0" stylesheets="@../Stylesheet/tableView.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="131.0" text="    Employee Id" />
+          <TableColumn fx:id="colName" prefWidth="216.0" text="          Employee Name" />
+            <TableColumn fx:id="colNIC" prefWidth="167.0" text="NIC" />
+            <TableColumn fx:id="colAddress" prefWidth="183.0" text="             Address" />
+            <TableColumn fx:id="colTelNo" prefWidth="185.0" text="               Tel No" />
+            <TableColumn fx:id="colSalary" prefWidth="174.0" style="fontcolour: #3d3d3d;" text="Salary" />
+            <TableColumn fx:id="colSection" prefWidth="150.0" text="          Section" />
+        </columns>
+      </TableView>
+      <Button layoutX="1376.0" layoutY="54.0" mnemonicParsing="false" onAction="#btnAttendanceOnAction" prefHeight="42.0" prefWidth="146.0" style="-fx-background-color: #52D017; -fx-background-radius: 10;" text="Attendance Details" />
+      <Pane layoutX="1267.0" layoutY="523.0" prefHeight="364.0" prefWidth="310.0" style="-fx-background-color: #A0D6B4; -fx-background-radius: 20;">
+      <ImageView fitHeight="277.0" fitWidth="265.0" layoutX="23.0" layoutY="43.0">
+         <image>
+            <Image url="@../assets/gif/Brainstorm.gif" />
+         </image>
+      </ImageView>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,29 @@
+.root{
+    -fx-background-color: #55efc4 ;
+}
+.table-view .column-header {
+    -fx-background-color:  #3EB489;
+    -fx-font-size:13;
+    -fx-font-family: Ubuntu;-text-fill: white;
+   -fx-font-style: white;
+}
+
+
+.table-view {
+    -fx-background-radius: 9px;
+    -fx-border-width: 3px;
+    -fx-border-color:  #888B90;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-row-cell:selected{
+    -fx-background-color:#F5AB1FFF;
+}
+.table-row-cell:odd{
+    -fx-background-color: #DADBDD;
+}
+.table-row-cell:even{
+    -fx-background-color: #E0E5E5;
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="customerPane" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.CustomerFormController">
+   <children>
+      <ImageView fitHeight="1010.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../assets/images/im 3.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#011f2c" layoutX="564.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER MANAGE" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Pane layoutX="100.0" layoutY="170.0" prefHeight="278.0" prefWidth="1400.0" style="-fx-border-color: #218c74; -fx-border-radius: 20; -fx-border-width: 5;">
+         <children>
+            <Text layoutX="23.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Id *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="523.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer  Name *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="23.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="523.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel  No *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtCustomerId" layoutX="162.0" layoutY="47.0" onKeyReleased="#txtCustomerIdOnKeyReleased" prefHeight="30.0" prefWidth="245.0" promptText="Enter C001 Format here" />
+            <TextField fx:id="txtCustomerName" layoutX="736.0" layoutY="43.0" onAction="#txtCustomerNameOnAction" onKeyReleased="#txtCustomerNameOnKeyReleased" prefHeight="30.0" prefWidth="245.0" promptText="Enter Customer Name here" />
+            <TextField fx:id="txtCustomerAddress" layoutX="162.0" layoutY="143.0" prefHeight="30.0" prefWidth="245.0" promptText="Enter Customer Address here" />
+            <TextField fx:id="txtCustomerTel" layoutX="736.0" layoutY="143.0" onAction="#txtSearchOnAction" onKeyReleased="#txtContactOnKeyReleased" prefHeight="30.0" prefWidth="245.0" promptText="Enter Tel No here" />
+            <Button layoutX="1076.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Save" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button fx:id="btnUpdate" layoutX="1255.0" layoutY="46.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" onMouseExited="#btnUpdateOnMouseExited" onMouseMoved="#btnUpdateOnMouseMoved" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44#387C44; -fx-background-radius: 15;" text="Update" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="1076.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Delete" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1255.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Clear" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Text layoutX="23.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E mail *">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtEmailAddress" layoutX="162.0" layoutY="220.0" onAction="#txtEmailOnAction" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="30.0" prefWidth="308.0" promptText="Enter Email Address here" />
+         </children>
+      </Pane>
+      <TableView fx:id="tblCustomer" layoutX="101.0" layoutY="522.0" prefHeight="426.0" prefWidth="1127.0" stylesheets="@../Stylesheet/tableView.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="151.0" text="Customer ID" />
+          <TableColumn fx:id="colName" prefWidth="250.0" text="Customer Name" />
+            <TableColumn fx:id="colAddress" prefWidth="264.0" text="Address" />
+            <TableColumn fx:id="colTel" prefWidth="223.0" text="Tel No" />
+            <TableColumn fx:id="colEmail" prefWidth="237.0" text="E mail" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="351.0" fitWidth="308.0" layoutX="1244.0" layoutY="512.0">
+         <image>
+            <Image url="@../assets/images/pic 20.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

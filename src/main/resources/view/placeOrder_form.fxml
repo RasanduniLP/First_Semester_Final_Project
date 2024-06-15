@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="placeOrderPane" prefHeight="1010.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.PlaceOrderFormController">
+   <children>
+      <ImageView fitHeight="1010.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../assets/images/im 3.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="569.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLACE ORDER FORM">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <Pane layoutX="25.0" layoutY="163.0" prefHeight="290.0" prefWidth="1537.0" style="-fx-border-color: #218c74; -fx-border-radius: 20; -fx-border-width: 5;">
+         <children>
+            <AnchorPane layoutX="36.0" layoutY="25.0" prefHeight="52.0" prefWidth="303.0" style="-fx-border-color: #006266; -fx-border-radius: 20; -fx-border-width: 3;">
+               <children>
+                  <TextField fx:id="txtOrderId" layoutX="126.0" layoutY="9.0" onKeyReleased="#txtOrderIdOnKeyReleased" prefHeight="26.0" prefWidth="136.0" />
+                  <Label fx:id="lblOrderId" layoutX="14.0" layoutY="16.0" text="Order Id -:">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="386.0" layoutY="25.0" prefHeight="52.0" prefWidth="303.0" style="-fx-border-color: #006266; -fx-border-radius: 20; -fx-border-width: 3;">
+               <children>
+                  <TextField fx:id="txtDate" layoutX="126.0" layoutY="9.0" prefHeight="26.0" prefWidth="128.0" />
+                  <Label fx:id="lblDate" layoutX="21.0" layoutY="16.0" text="Date -:">
+                     <font>
+                        <Font size="17.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+            <Text layoutX="24.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Id *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="906.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Id *" wrappingWidth="100.33154296875">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <ComboBox fx:id="cmbCustomerId" layoutX="165.0" layoutY="133.0" prefWidth="150.0" />
+            <ComboBox fx:id="cmbProductId" layoutX="1073.0" layoutY="132.0" onAction="#cmbProductOnAction" prefWidth="150.0" />
+            <Text layoutX="24.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtxProductName" layoutX="176.0" layoutY="223.0" prefHeight="26.0" prefWidth="222.0" promptText="Enter Product Name here" />
+            <Text layoutX="461.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Name *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtCustomerName" layoutX="650.0" layoutY="133.0" onAction="#txtSearchOnAction" onKeyReleased="#txtNameOnKeyReleased" prefHeight="26.0" prefWidth="222.0" promptText="Enter Customer Name here" />
+            <Text layoutX="461.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtxUnitPrice" layoutX="650.0" layoutY="214.0" prefHeight="26.0" prefWidth="222.0" promptText="Enter Unit Price here" />
+            <Text layoutX="1268.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtQty" layoutX="1338.0" layoutY="211.0" onAction="#txtQtyOnAction" prefHeight="26.0" prefWidth="160.0" promptText="Enter Product Qty here" />
+            <Button layoutX="1326.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnAddToCartOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="        Add To Cart" textFill="#f5efef">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Text layoutX="906.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty On Hand *">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtQtyOnHand" layoutX="1061.0" layoutY="211.0" prefHeight="26.0" prefWidth="175.0" promptText="Enter Qty On Hand here" />
+            <AnchorPane layoutX="761.0" layoutY="25.0" prefHeight="52.0" prefWidth="303.0" style="-fx-border-color: #006266; -fx-border-radius: 20; -fx-border-width: 3;">
+               <children>
+                  <TextField fx:id="txtPayment" layoutX="126.0" layoutY="9.0" prefHeight="26.0" prefWidth="143.0" />
+                  <Label layoutX="21.0" layoutY="16.0" text="Payment -:">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="1338.0" layoutY="29.0">
+               <image>
+                  <Image url="@../assets/icons/icon 16.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="1326.0" layoutY="77.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Clear" textFill="#f5efef">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="1338.0" layoutY="81.0">
+               <image>
+                  <Image url="@../assets/icons/icons8-clear-64.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TableView fx:id="tblOrderDetails" layoutX="162.0" layoutY="505.0" prefHeight="385.0" prefWidth="1277.0" stylesheets="@../Stylesheet/tableView.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="165.0" text="Product Id" />
+          <TableColumn fx:id="colName" prefWidth="296.0" text="Product Name" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="223.0" text="Unit Price" />
+            <TableColumn fx:id="colQty" prefWidth="194.0" text="Qty" />
+            <TableColumn fx:id="colTotal" prefWidth="192.0" text="Total" />
+            <TableColumn fx:id="colAction" prefWidth="206.0" text="Action" />
+        </columns>
+      </TableView>
+      <Button layoutX="1404.0" layoutY="939.0" mnemonicParsing="false" onAction="#placeOrderOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="          Place Order" textFill="#f5efef" />
+      <Text layoutX="52.0" layoutY="969.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtTotal" layoutX="156.0" layoutY="951.0" prefHeight="26.0" prefWidth="118.0" />
+      <ImageView fitHeight="35.0" fitWidth="34.0" layoutX="1416.0" layoutY="943.0">
+         <image>
+            <Image url="@../assets/icons/icon 17.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1218.0" layoutY="940.0" mnemonicParsing="false" onAction="#btnPrintBillOnAction" prefHeight="42.0" prefWidth="150.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Print Bill" textFill="#f5efef" />
+   </children>
+</AnchorPane>

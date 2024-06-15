@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNode" prefHeight="1013.0" prefWidth="1859.0" style="-fx-background-color: #BEF4D2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.RegisterFormController">
+   <children>
+      <AnchorPane layoutX="277.0" layoutY="113.0" prefHeight="771.0" prefWidth="1321.0" style="-fx-background-color: #ffffff; -fx-background-radius: 30;">
+         <children>
+            <Pane layoutX="83.0" layoutY="81.0" prefHeight="619.0" prefWidth="433.0" style="-fx-background-color: #E6FFFA; -fx-background-radius: 20;">
+               <children>
+                  <TextField fx:id="txtUserId" layoutX="148.0" layoutY="72.0" onKeyReleased="#txtUserIdOnKeyReleased" prefHeight="42.0" prefWidth="247.0" promptText="Enter your user id here" style="-fx-background-radius: 10;" />
+                  <TextField fx:id="txtUsername" layoutX="148.0" layoutY="155.0" onAction="#txtUsernameOnAction" onKeyReleased="#txtUserNameOnKeyReleased" prefHeight="42.0" prefWidth="247.0" promptText="Enter your username here" style="-fx-background-radius: 10;" />
+                  <TextField fx:id="txtPassword" layoutX="148.0" layoutY="260.0" onAction="#txtPasswordOnAction" onKeyReleased="#txtPasswordOnKeyReleased" prefHeight="42.0" prefWidth="247.0" promptText="Enter your password here" style="-fx-background-radius: 10;" />
+                  <TextField fx:id="txtEmail" layoutX="153.0" layoutY="348.0" onAction="#txtEmailOnAction" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="42.0" prefWidth="247.0" promptText="Enter your e mail heer" style="-fx-background-radius: 10;" />
+                  <Text fill="#1d1e1c" layoutX="20.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="19.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="23.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="25.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E mail">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="153.0" layoutY="452.0" mnemonicParsing="false" onAction="#btnRegisterOnAction" prefHeight="42.0" prefWidth="247.0" style="-fx-background-color: #222f3e; -fx-background-radius: 10;" text=" Sign Up" textFill="#f5efef">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="162.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account ? " />
+                  <Hyperlink layoutX="337.0" layoutY="513.0" onAction="#hyperlinkLogInOnAction" text="Log In" />
+                  <Text fill="#227093" layoutX="147.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="699.0" layoutY="161.0" prefHeight="454.0" prefWidth="543.0">
+            <ImageView fitHeight="419.0" fitWidth="506.0" layoutX="24.0" layoutY="18.0">
+               <image>
+                  <Image url="@../assets/gif/welcome.gif" />
+               </image>
+            </ImageView>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

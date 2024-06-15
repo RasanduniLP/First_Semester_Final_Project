@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="productPane" prefHeight="1010.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.ProductFormController">
+   <children>
+      <ImageView fitHeight="1010.0" fitWidth="1600.0">
+         <image>
+            <Image url="@../assets/images/im 3.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="685.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ITEM MANAGE">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
+      <TableView fx:id="tblProduct" layoutX="100.0" layoutY="505.0" prefHeight="442.0" prefWidth="888.0" stylesheets="@../Stylesheet/tableView.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="174.0" text="   Product Id" />
+          <TableColumn fx:id="colName" prefWidth="270.0" text="   Product Name " />
+            <TableColumn fx:id="colUnitPrice" prefWidth="235.0" text="   Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="206.0" text="Qty On Hand" />
+        </columns>
+      </TableView>
+      <Pane layoutX="91.0" layoutY="176.0" prefHeight="249.0" prefWidth="1400.0" style="-fx-border-color: #218c74; -fx-border-radius: 20; -fx-border-width: 5;">
+         <children>
+            <Text layoutX="23.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Id *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="573.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="23.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unit Price *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <Text layoutX="573.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Qty On Hand *">
+               <font>
+                  <Font size="17.0" />
+               </font></Text>
+            <TextField fx:id="txtProductId" layoutX="160.0" layoutY="46.0" onKeyReleased="#txtProductIdOnKeyReleased" prefHeight="30.0" prefWidth="245.0" promptText="Enter P001 Format here" />
+            <TextField fx:id="txtProductName" layoutX="747.0" layoutY="47.0" onAction="#txtSearchOnAction" prefHeight="30.0" prefWidth="245.0" promptText="Enter Product Name here" />
+            <TextField fx:id="txtUnitPrice" layoutX="160.0" layoutY="155.0" onKeyReleased="#txtUnitPriceOnKeyReleased" prefHeight="30.0" prefWidth="245.0" promptText="Enter Unit Price here" />
+            <TextField fx:id="txtQtyOnHand" layoutX="747.0" layoutY="148.0" prefHeight="30.0" prefWidth="245.0" promptText="Enter Qty On Hand here" />
+            <Button layoutX="1076.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Save" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button fx:id="btnUpdate" layoutX="1255.0" layoutY="45.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" onMouseExited="#btnUpdateOnMouseExited" onMouseMoved="#btnUpdateOnMouseMoved" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Update" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1076.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Delete" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+            <Button layoutX="1261.0" layoutY="159.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="30.0" prefWidth="102.0" style="-fx-background-color: #387C44; -fx-background-radius: 15;" text="Clear" textFill="#f5efef">
+               <font>
+                  <Font size="17.0" />
+               </font></Button>
+         </children>
+      </Pane>
+      <Button layoutX="1363.0" layoutY="61.0" mnemonicParsing="false" onAction="#btnDetailsOnAction" prefHeight="42.0" prefWidth="146.0" style="-fx-background-color: #52D017; -fx-background-radius: 10;" text="More Details" />
+      <ImageView fitHeight="133.0" fitWidth="200.0" layoutX="1357.0" layoutY="557.0">
+         <image>
+            <Image url="@../assets/images/pic 25.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="133.0" fitWidth="200.0" layoutX="1148.0" layoutY="557.0">
+         <image>
+            <Image url="@../assets/images/pic 26.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="133.0" fitWidth="200.0" layoutX="1357.0" layoutY="698.0">
+         <image>
+            <Image url="@../assets/images/pic 27.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="169.0" fitWidth="133.0" layoutX="1215.0" layoutY="698.0">
+         <image>
+            <Image url="@../assets/images/pic 28.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
