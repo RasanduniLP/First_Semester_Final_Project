@@ -68,8 +68,7 @@ public class VehicleDetailFormController {
         loadAllVehicles();
         getCurrentVehicleId();
 
-        boolean isUpdating = true;
-        txtVehicleId.setEditable(!isUpdating);
+
         btnUpdate.setOnMouseExited(event -> {
             if (tooltip != null) {
                 tooltip.hide();
@@ -165,7 +164,8 @@ public class VehicleDetailFormController {
                 boolean isSaved = VehicleRepo.saveVehicles(vehicle);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Vehicle saved successfully!").show();
-
+                    loadAllVehicles();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
@@ -190,6 +190,8 @@ public class VehicleDetailFormController {
                 boolean isUpdated = VehicleRepo.updateVehicles(vehicle);
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Vehicle updated successfully!").show();
+                    loadAllVehicles();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {

@@ -73,8 +73,6 @@ public class ProductFormController {
         loadAllProducts();
         getCurrentProductId();
 
-        boolean isUpdating = true;
-        txtProductId.setEditable(!isUpdating);
 
         btnUpdate.setOnMouseExited(event -> {
             if (tooltip != null) {
@@ -173,6 +171,8 @@ public class ProductFormController {
                 boolean isSaved = ProductRepo.saveProducts(product);
                 if(isSaved){
                     new Alert(Alert.AlertType.CONFIRMATION,"Product saved successfully!").show();
+                    loadAllProducts();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
@@ -197,6 +197,8 @@ public class ProductFormController {
                 boolean isUpdated = ProductRepo.updateProducts(product);
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Product updated successfully!").show();
+                    loadAllProducts();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {

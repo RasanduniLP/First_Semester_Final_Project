@@ -218,6 +218,8 @@ public class MaterialDetailFormController {
                 boolean isSaved = MaterialDetailRepo.saveDetails(materialDetail);
                 if(isSaved){
                     new Alert(Alert.AlertType.CONFIRMATION,"Saved successfully!").show();
+                    loadAllDetails();
+                    clearFields();
                 }
             }
 
@@ -249,6 +251,8 @@ public class MaterialDetailFormController {
                 boolean isUpdated = MaterialDetailRepo.updateDetails(materialDetail);
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Updated successfully!").show();
+                    loadAllDetails();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {

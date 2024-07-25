@@ -91,8 +91,7 @@ public class EmployeeFormController {
         loadAllEmployees();
         getCurrentEmployeeId();
 
-        boolean isUpdating = true;
-       txtEmployeeId.setEditable(!isUpdating);
+
         btnUpdate.setOnMouseExited(event -> {
             if (tooltip != null) {
                 tooltip.hide();
@@ -207,6 +206,8 @@ public class EmployeeFormController {
                 boolean isSaved = EmployeeRepo.saveEmployees(employee);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Employee saved successfully!").show();
+                    loadAllEmployees();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
@@ -234,6 +235,8 @@ public class EmployeeFormController {
                 boolean isUpdated = EmployeeRepo.updateEmployees(employee);
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Employee updated successfully!").show();
+                    loadAllEmployees();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {

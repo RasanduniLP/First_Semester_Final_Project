@@ -162,6 +162,8 @@ public class DeliveryFormController {
             boolean isDeleted = DeliveryRepo.deleteDetails(deliveryId);
             if(isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Details deleted successfully!").show();
+                loadDeliveryDetails();
+                clearFields();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -185,6 +187,8 @@ public class DeliveryFormController {
                 boolean isSaved = DeliveryRepo.saveDetails(deliveryDetail);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Saved successfully!").show();
+                    loadDeliveryDetails();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
@@ -209,6 +213,8 @@ public class DeliveryFormController {
             boolean isUpdated = DeliveryRepo.updateDetails(deliveryDetail);
             if(isUpdated){
                 new Alert(Alert.AlertType.CONFIRMATION,"Updated successfully!").show();
+                loadDeliveryDetails();
+                clearFields();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();

@@ -158,6 +158,8 @@ public class RawMaterialFormController {
                 boolean isSaved = RawMaterialRepo.saveMaterials(rawMaterial);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Material saved successfully!").show();
+                    loadAllMaterials();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
@@ -181,6 +183,8 @@ public class RawMaterialFormController {
                 boolean isUpdated = RawMaterialRepo.updateMaterials(rawMaterial);
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Material updated successfully!").show();
+                    loadAllMaterials();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {

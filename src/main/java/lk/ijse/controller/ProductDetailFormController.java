@@ -145,6 +145,8 @@ public class ProductDetailFormController {
                 boolean isSaved = ProductDetailRepo.saveDetails(productDetail);
                 if(isSaved){
                     new Alert(Alert.AlertType.CONFIRMATION,"Details saved successfully!").show();
+                    loadAllDetails();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
@@ -166,6 +168,8 @@ public class ProductDetailFormController {
             }
             if(isUpdated){
                 new Alert(Alert.AlertType.CONFIRMATION,"Details updated successfully!").show();
+                loadAllDetails();
+                clearFields();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();

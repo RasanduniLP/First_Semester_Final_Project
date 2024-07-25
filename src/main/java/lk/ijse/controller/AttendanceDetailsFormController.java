@@ -177,7 +177,7 @@ public class AttendanceDetailsFormController {
                 boolean isSaved = AttendanceRepo.saveAttendance(attendance);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Attendance Details saved successfully!").show();
-
+                    loadAllDetails();
                 }
             }
         }catch (SQLException e){
@@ -199,6 +199,7 @@ public class AttendanceDetailsFormController {
             boolean isUpdated = AttendanceRepo.updateAttendance(attendance);
             if(isUpdated){
                 new Alert(Alert.AlertType.CONFIRMATION,"Attendance Details updated successfully!").show();
+                loadAllDetails();
             }
         } catch (SQLException e) {
            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();

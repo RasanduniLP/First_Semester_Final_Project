@@ -74,8 +74,6 @@ public class CustomerFormController {
       loadAllCustomers();
       getCurrentCustomerId();
 
-        boolean isUpdating = true;
-        txtCustomerId.setEditable(!isUpdating);
 
         btnUpdate.setOnMouseExited(event -> {
             if (tooltip != null) {
@@ -158,7 +156,8 @@ public class CustomerFormController {
             }
             if(isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Customer deleted!").show();
-                tblCustomer.refresh();
+                loadAllCustomers();
+                clearFields();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -182,7 +181,8 @@ public class CustomerFormController {
                 boolean isSaved = CustomerRepo.saveCustomers(customer);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Customer saved successfully!").show();
-
+                    loadAllCustomers();
+                    clearFields();
                 }
           }
         }catch (SQLException e){
@@ -207,7 +207,8 @@ public class CustomerFormController {
                 boolean isUpdated = CustomerRepo.updateCustomers(customer);
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Customer updated successfully!").show();
-                    tblCustomer.refresh();
+                    loadAllCustomers();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {

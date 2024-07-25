@@ -65,8 +65,6 @@ public class SupplierFormController {
         loadAllSuppliers();
         getCurrentSupplierId();
 
-        boolean isUpdating = true;
-        txtSupplierId.setEditable(!isUpdating);
 
         btnUpdate.setOnMouseExited(event -> {
             if (tooltip != null) {
@@ -169,6 +167,8 @@ public class SupplierFormController {
                 boolean isSaved = SupplierRepo.saveSuppliers(supplier);
                 if(isSaved){
                     new Alert(Alert.AlertType.CONFIRMATION,"Supplier saved successfully!").show();
+                    loadAllSuppliers();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
@@ -193,6 +193,8 @@ public class SupplierFormController {
                 boolean isUpdated = SupplierRepo.updateSuppliers(supplier);
                 if (isUpdated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "Supplier updated successfully!").show();
+                    loadAllSuppliers();
+                    clearFields();
                 }
             }
         } catch (SQLException e) {
